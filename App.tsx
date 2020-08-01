@@ -7,10 +7,15 @@
  *
  * @format
  */
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import MyTabs from './src/routes';
+import { loadItem, storageKeys } from 'src/services/storage.service';
 
 export default function App() {
+  useEffect(() => {
+    loadItem(storageKeys.TIME_DATA);
+  }, []);
+
   return <MyTabs />;
 }

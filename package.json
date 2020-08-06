@@ -14,7 +14,9 @@
     "@react-native-community/masked-view": "^0.1.10",
     "@react-navigation/material-top-tabs": "^5.2.5",
     "@react-navigation/native": "^5.4.0",
+    "@reduxjs/toolkit": "^1.4.0",
     "@welldone-software/why-did-you-render": "^4.2.2",
+    "lodash": "^4.17.19",
     "moment": "^2.25.3",
     "react": "16.11.0",
     "react-native": "0.62.2",
@@ -26,7 +28,10 @@
     "react-native-screens": "^2.7.0",
     "react-native-size-matters": "^0.3.0",
     "react-native-svg": "^12.1.0",
-    "react-native-tab-view": "^2.14.0"
+    "react-native-tab-view": "^2.14.0",
+    "react-redux": "^7.2.1",
+    "redux": "^4.0.5",
+    "redux-persist": "^6.0.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.2",
@@ -43,6 +48,7 @@
     "metro-react-native-babel-preset": "^0.58.0",
     "prettier": "^2.0.4",
     "react-test-renderer": "16.11.0",
+    "redux-devtools": "^3.6.0",
     "typescript": "^3.8.3"
   },
   "jest": {

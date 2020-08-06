@@ -7,15 +7,19 @@
  *
  * @format
  */
-import React, { useEffect } from 'react';
+import React from 'react';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
 
 import MyTabs from './src/routes';
-import { loadItem, storageKeys } from 'src/services/storage.service';
+import { store, persistor } from './src/store';
 
 export default function App() {
-  useEffect(() => {
-    loadItem(storageKeys.TIME_DATA);
-  }, []);
-
-  return <MyTabs />;
+  return (
+    <Provider store={store}>
+      <PersistGate loading={null} persistor={persistor}>
+        <MyTabs />
+      </PersistGate>
+    </Provider>
+  );
 }

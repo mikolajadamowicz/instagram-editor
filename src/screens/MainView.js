@@ -12,14 +12,15 @@ export default function MainView() {
   const dispatch = useDispatch();
   const [score, setScore] = useState(0);
 
-  const setClicked = () =>
+  const setClicked = () => {
     dispatch(setGlobalScore({ score, today: new Date().toISOString() }));
+    setScore(0);
+  };
 
   return (
     <SafeAreaView style={styles.safeArea}>
       <AppText>Bezier Line Chart</AppText>
-      <Chart dataset={timeData} labels={['Mon', 'Tue']} />
-
+      <Chart dataset={timeData.scores} labels={timeData.labels} />
       <View style={styles.buttons}>
         <Button onPress={() => setScore(score + 1)} title="+1" />
         <Button onPress={() => setScore(score - 1)} title="-1" />

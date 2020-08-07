@@ -17,10 +17,6 @@ export const timeDataSlice = createSlice({
         date: new Date().toISOString(),
         score: 0,
       },
-      {
-        date: new Date().toISOString(),
-        score: 1,
-      },
     ],
   },
   reducers: {
@@ -43,8 +39,15 @@ export const timeDataSlice = createSlice({
 
 export const selectDays = (state) => state.days;
 
-export const selectLastWeekScore = (state) =>
-  takeRight(state.days, 7).map((day) => day.score);
+export const selectLastWeekScore = (state) => {
+  const lastWeek = takeRight(state.days, 7);
+  return {
+    scores: lastWeek.map((day) => day.score),
+    labels: lastWeek.map((day) =>
+      new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' }),
+    ),
+  };
+};
 
 export const {
   setGlobalScore,

@@ -1,7 +1,14 @@
 import { createSlice } from '@reduxjs/toolkit';
 import { takeRight } from 'lodash';
 
-function sameDay(d1, d2) {
+type State = {
+  days: {
+    date: string;
+    score: number;
+  }[];
+};
+
+function sameDay(d1: Date, d2: Date) {
   return (
     d1.getFullYear() === d2.getFullYear() &&
     d1.getMonth() === d2.getMonth() &&
@@ -37,22 +44,20 @@ export const timeDataSlice = createSlice({
   },
 });
 
-export const selectDays = (state) => state.days;
+export const selectDays = (state: State) => state.days;
 
-export const selectLastWeekScore = (state) => {
+export const selectLastWeekScore = (state: State) => {
   const lastWeek = takeRight(state.days, 7);
   return {
-    scores: lastWeek.map((day) => day.score),
-    labels: lastWeek.map((day) =>
-      new Date(day.date).toLocaleDateString('en-US', { weekday: 'short' }),
+    scores: lastWeek.map((day: { score: number }) => day.score),
+    labels: lastWeek.map((day: { date: string }) =>
+      new Date(day.date).toLocaleDateString('en-US', {
+        weekday: 'short',
+      }),
     ),
   };
 };
 
-export const {
-  setGlobalScore,
-  decrement,
-  incrementByAmount,
-} = timeDataSlice.actions;
+export const { setGlobalScore } = timeDataSlice.actions;
 
 export default timeDataSlice.reducer;

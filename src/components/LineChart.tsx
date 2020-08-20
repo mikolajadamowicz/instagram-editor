@@ -1,9 +1,21 @@
 import React from 'react';
-import {LineChart} from 'react-native-chart-kit';
-import {Dimensions} from 'react-native';
-import {scale} from 'react-native-size-matters';
+import { LineChart } from 'react-native-chart-kit';
+import { Dimensions, StyleSheet } from 'react-native';
+import { scale } from 'react-native-size-matters';
 
-const Chart = ({dataset, height, labels, ...props}) => {
+type Props = {
+  dataset: number[];
+  height?: number;
+  labels: string[];
+} & typeof defaultProps;
+
+const defaultProps = {
+  dataset: [1, 2, 3, 4, 0, 1],
+  height: 330,
+  labels: ['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun'],
+};
+
+const Chart: React.FC<Props> = ({ dataset, height, labels, ...props }) => {
   return (
     <LineChart
       data={{
@@ -39,19 +51,19 @@ const Chart = ({dataset, height, labels, ...props}) => {
         },
       }}
       bezier
-      style={{
-        marginVertical: 8,
-        borderRadius: 16,
-      }}
+      style={styles.chart}
       {...props}
     />
   );
 };
 
-Chart.defaultProps = {
-  dataset: [1, 2, 3, 4, 0, 1],
-  height: 330,
-  labels: ['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun'],
-};
+const styles = StyleSheet.create({
+  chart: {
+    marginVertical: 8,
+    borderRadius: 16,
+  },
+});
+
+Chart.defaultProps = defaultProps;
 
 export default Chart;

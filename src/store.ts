@@ -17,10 +17,10 @@ const persistConfig = {
   storage: AsyncStorage,
 };
 
-const persistedReducer = persistReducer(persistConfig, timeDataReducer);
+const rootReducer = persistReducer(persistConfig, timeDataReducer);
 
 const store = configureStore({
-  reducer: persistedReducer,
+  reducer: rootReducer,
   middleware: getDefaultMiddleware({
     serializableCheck: {
       ignoredActions: [FLUSH, REHYDRATE, PAUSE, PERSIST, PURGE, REGISTER],
@@ -28,5 +28,7 @@ const store = configureStore({
   }),
 });
 let persistor = persistStore(store);
+
+export type RootState = ReturnType<typeof rootReducer>;
 
 export { store, persistor };

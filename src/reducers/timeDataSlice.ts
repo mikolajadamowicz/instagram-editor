@@ -58,6 +58,42 @@ export const selectLastWeekScore = (state: State) => {
   };
 };
 
+export const selectLastMonthScore = (state: State) => {
+  const lastWeek = takeRight(state.days, 7);
+  return {
+    scores: lastWeek.map((day: { score: number }) => day.score),
+    labels: lastWeek.map((day: { date: string }) =>
+      new Date(day.date).toLocaleDateString('en-US', {
+        weekday: 'short',
+      }),
+    ),
+  };
+};
+
+export const select3MonthScore = (state: State) => {
+  const lastWeek = takeRight(state.days, 7);
+  return {
+    scores: lastWeek.map((day: { score: number }) => day.score),
+    labels: lastWeek.map((day: { date: string }) =>
+      new Date(day.date).toLocaleDateString('en-US', {
+        weekday: 'short',
+      }),
+    ),
+  };
+};
+
+export const select6MonthsScore = (state: State) => {
+  const lastWeek = takeRight(state.days, 7);
+  return {
+    scores: lastWeek.map((day: { score: number }) => day.score),
+    labels: lastWeek.map((day: { date: string }) =>
+      new Date(day.date).toLocaleDateString('en-US', {
+        weekday: 'short',
+      }),
+    ),
+  };
+};
+
 export const { setGlobalScore } = timeDataSlice.actions;
 
 export default timeDataSlice.reducer;

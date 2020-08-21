@@ -7,15 +7,14 @@ type Props = {
   dataset: number[];
   height?: number;
   labels: string[];
-} & typeof defaultProps;
-
-const defaultProps = {
-  dataset: [1, 2, 3, 4, 0, 1],
-  height: 330,
-  labels: ['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun'],
 };
 
-const Chart: React.FC<Props> = ({ dataset, height, labels, ...props }) => {
+const Chart: React.FC<Props> = ({
+  dataset,
+  height = 330,
+  labels,
+  ...props
+}) => {
   return (
     <LineChart
       data={{
@@ -63,7 +62,5 @@ const styles = StyleSheet.create({
     borderRadius: 16,
   },
 });
-
-Chart.defaultProps = defaultProps;
 
 export default Chart;

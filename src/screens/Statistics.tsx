@@ -15,11 +15,23 @@ const Statistics = () => {
     <ScrollView style={styles.scroll}>
       <View style={containerStyle}>
         <AppText>Monthly chart</AppText>
-        <Chart height={verticalScale(290)} />
+        <Chart
+          dataset={[1, 2, 3, 4, 0, 1]}
+          labels={['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun']}
+          height={verticalScale(290)}
+        />
         <AppText>3 months time chart</AppText>
-        <Chart height={verticalScale(290)} />
-        <AppText>5 months time chart</AppText>
-        <Chart height={verticalScale(290)} />
+        <Chart
+          dataset={[1, 2, 3, 4, 0, 1]}
+          labels={['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun']}
+          height={verticalScale(290)}
+        />
+        <AppText>6 months time chart</AppText>
+        <Chart
+          dataset={[1, 2, 3, 4, 0, 1]}
+          labels={['Mon', 'Tue', 'Wed', 'Thr', 'Fri', 'Sat', 'Sun']}
+          height={verticalScale(290)}
+        />
       </View>
     </ScrollView>
   );

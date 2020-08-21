@@ -1,11 +1,7 @@
 import React from 'react';
-import { Text } from 'react-native';
+import { Text, TextProps } from 'react-native';
 
-type Props = {
-  children: React.ReactNode;
-};
-
-const AppText: React.FC<Props> = ({ children, ...props }) => {
+const AppText: React.FC<TextProps> = ({ children, ...props }) => {
   return <Text {...props}>{children}</Text>;
 };
 

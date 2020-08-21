@@ -4,10 +4,13 @@ import { useSelector, useDispatch } from 'react-redux';
 import { SafeAreaView } from 'react-native-safe-area-context';
 import Chart from '../components/LineChart';
 import AppText from '../components/AppText';
-import { setGlobalScore, selectLastWeekScore } from '../reducers/timeDataSlice';
+import {
+  setGlobalScore,
+  selectLast7DaysScore,
+} from '../reducers/timeDataSlice';
 
 export default function MainView() {
-  const timeData = useSelector(selectLastWeekScore);
+  const timeData = useSelector(selectLast7DaysScore);
   const dispatch = useDispatch();
   const [score, setScore] = useState(0);
 
@@ -18,6 +21,7 @@ export default function MainView() {
 
   return (
     <SafeAreaView style={styles.safeArea}>
+      <AppText>Last 7 days</AppText>
       <Chart dataset={timeData.scores} labels={timeData.labels} />
       <View style={styles.buttons}>
         <Button onPress={() => setScore(score + 1)} title="+1" />

@@ -44,13 +44,14 @@ export const timeDataSlice = createSlice({
   },
 });
 
-export const selectDays = (state: State) => state.days;
+// Selectors
+const selectAllDays = (state: State) => state.days;
 
-export const selectLastWeekScore = (state: State) => {
-  const lastWeek = takeRight(state.days, 7);
+const selectLastDays = (state: State, days: number = 0) => {
+  const selected = takeRight(state.days, days);
   return {
-    scores: lastWeek.map((day: { score: number }) => day.score),
-    labels: lastWeek.map((day: { date: string }) =>
+    scores: selected.map((day: { score: number }) => day.score),
+    labels: selected.map((day: { date: string }) =>
       new Date(day.date).toLocaleDateString('en-US', {
         weekday: 'short',
       }),
@@ -58,42 +59,22 @@ export const selectLastWeekScore = (state: State) => {
   };
 };
 
-export const selectLastMonthScore = (state: State) => {
-  const lastWeek = takeRight(state.days, 7);
-  return {
-    scores: lastWeek.map((day: { score: number }) => day.score),
-    labels: lastWeek.map((day: { date: string }) =>
-      new Date(day.date).toLocaleDateString('en-US', {
-        weekday: 'short',
-      }),
-    ),
-  };
-};
+const selectLast7DaysScore = (state: State) => selectLastDays(state, 7);
 
-export const select3MonthScore = (state: State) => {
-  const lastWeek = takeRight(state.days, 7);
-  return {
-    scores: lastWeek.map((day: { score: number }) => day.score),
-    labels: lastWeek.map((day: { date: string }) =>
-      new Date(day.date).toLocaleDateString('en-US', {
-        weekday: 'short',
-      }),
-    ),
-  };
-};
+const selectLast14DaysScore = (state: State) => selectLastDays(state, 14);
 
-export const select6MonthsScore = (state: State) => {
-  const lastWeek = takeRight(state.days, 7);
-  return {
-    scores: lastWeek.map((day: { score: number }) => day.score),
-    labels: lastWeek.map((day: { date: string }) =>
-      new Date(day.date).toLocaleDateString('en-US', {
-        weekday: 'short',
-      }),
-    ),
-  };
-};
+const selectLast30DaysScore = (state: State) => selectLastDays(state, 30);
+
+const selectLast90DaysScore = (state: State) => selectLastDays(state, 90);
 
 export const { setGlobalScore } = timeDataSlice.actions;
 
+export {
+  selectAllDays,
+  selectLastDays,
+  selectLast7DaysScore,
+  selectLast14DaysScore,
+  selectLast30DaysScore,
+  selectLast90DaysScore,
+};
 export default timeDataSlice.reducer;

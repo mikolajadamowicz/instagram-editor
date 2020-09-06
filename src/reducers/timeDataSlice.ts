@@ -1,10 +1,12 @@
 import { createSlice } from '@reduxjs/toolkit';
-import { takeRight } from 'lodash';
+import { takeRight, last } from 'lodash';
+import moment from 'moment';
 
 type State = {
   days: {
     date: string;
     score: number;
+    scoreToday: number;
   }[];
 };
 
@@ -21,8 +23,14 @@ export const timeDataSlice = createSlice({
   initialState: {
     days: [
       {
-        date: new Date().toISOString(),
+        date: moment().subtract(1, 'days').toISOString(),
         score: 0,
+        scoreToday: 0,
+      },
+      {
+        date: moment().toISOString(),
+        score: 0,
+        scoreToday: 0,
       },
     ],
   },
@@ -32,12 +40,19 @@ export const timeDataSlice = createSlice({
       const lastDay = state.days[state.days.length - 1];
       const updatedScore = lastDay.score + score;
 
+      //update this later, this expression is here only so that it won't break my own app
+      const updatedScoreToday = lastDay.scoreToday
+        ? lastDay.scoreToday + score
+        : score;
+
       if (sameDay(new Date(lastDay.date), new Date(today))) {
         lastDay.score = updatedScore;
+        lastDay.scoreToday = updatedScoreToday;
       } else {
         state.days.push({
           date: new Date().toISOString(),
           score: updatedScore,
+          scoreToday: score,
         });
       }
     },
@@ -49,13 +64,15 @@ const selectAllDays = (state: State) => state.days;
 
 const selectLastDays = (state: State, days: number = 0) => {
   const selected = takeRight(state.days, days);
+  console.log(last(selected));
   return {
     scores: selected.map((day: { score: number }) => day.score),
     labels: selected.map((day: { date: string }) =>
       new Date(day.date).toLocaleDateString('en-US', {
         weekday: 'short',
-      }),
+      })
     ),
+    scoreToday: last(selected)?.scoreToday,
   };
 };
 

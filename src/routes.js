@@ -1,19 +1,17 @@
 import * as React from 'react';
 import { View, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
-import {
-  createMaterialTopTabNavigator,
-  MaterialTopTabBar,
-} from '@react-navigation/material-top-tabs';
+import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import Statistics from './screens/Statistics';
 import MainView from './screens/MainView';
 import { SafeAreaProvider, useSafeArea } from 'react-native-safe-area-context';
+import AppTabBar from './components/AppTabBar';
 
 const SafeAreaMaterialTopTabBar = ({ ...props }) => {
   const insets = useSafeArea();
   return (
     <View style={{ paddingTop: insets.top }}>
-      <MaterialTopTabBar {...props} />
+      <AppTabBar {...props} />
     </View>
   );
 };
@@ -26,10 +24,11 @@ export default function MyTabs() {
       <NavigationContainer>
         <Tab.Navigator
           tabBar={(props) => <SafeAreaMaterialTopTabBar {...props} />}
-          initialRouteName="Home"
-          initialLayout={{ width: Dimensions.get('window').width }}>
+          initialRouteName="Today"
+          initialLayout={{ width: Dimensions.get('window').width }}
+          swipeEnabled>
           <Tab.Screen name="Statistics" component={Statistics} />
-          <Tab.Screen name="Home" component={MainView} />
+          <Tab.Screen name="Today" component={MainView} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

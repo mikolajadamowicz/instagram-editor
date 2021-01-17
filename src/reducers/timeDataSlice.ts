@@ -64,7 +64,6 @@ const selectAllDays = (state: State) => state.days;
 
 const selectLastDays = (state: State, days: number = 0) => {
   const selected = takeRight(state.days, days);
-  console.log(last(selected));
   return {
     scores: selected.map((day: { score: number }) => day.score),
     labels: selected.map((day: { date: string }) =>

@@ -1,44 +1,4 @@
 
 Todo:
-  ☐ Item
-
-
-
-[] [] [] [] [] 
-
-
-
-[
-  {
-  date: new Date()
-  activities: [{id:, desc, type}]
-  value:1
-}
-]
-
-type:{
-  positive:'positive'
-  negative:'nevative'
-}
-
-w ciagu kazdego dnia jest tablica obiektow 
-
-kazdy dzien sam w sobie jest obiektem 
-ma tablice zadan 
-i score 
-i nazwe/date 
-
-musze miec mozlisoc ladnie querowanie po miesiacach 
-
-2 tygodniach 
-
-3 miesiacach 
-
-roku 
-
-pol roku 
-
-
-3 lata apka codziennie ma miec iles danych ile to danych ogolnie i jakie sa ograniczenia AsyncStorage 
-
+  ☐ disable rotate functionality 
 

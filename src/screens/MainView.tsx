@@ -10,7 +10,7 @@ import {
 } from '../reducers/timeDataSlice';
 import { last } from 'lodash';
 
-export default function MainView() {
+const MainView: React.FC = () => {
   const timeData = useSelector(selectLast7DaysScore);
   // const timeData = { labels: ['Mon'], scores: [1] };
   const dispatch = useDispatch();
@@ -41,7 +41,7 @@ export default function MainView() {
       </ScrollView>
     </SafeAreaView>
   );
-}
+};
 
 const styles = StyleSheet.create({
   safeArea: {
@@ -61,3 +61,5 @@ const styles = StyleSheet.create({
     backgroundColor: '#fff',
   },
 });
+
+export default MainView;

@@ -2,12 +2,20 @@ import { createSlice } from '@reduxjs/toolkit';
 import { takeRight, last } from 'lodash';
 import moment from 'moment';
 
+type Days = {
+  date: string;
+  score: number;
+  scoreToday: number;
+};
+
+type LastDays = {
+  scores: number[];
+  labels: string[];
+  scoreToday: number;
+};
+
 type State = {
-  days: {
-    date: string;
-    score: number;
-    scoreToday: number;
-  }[];
+  days: Days;
 };
 
 function sameDay(d1: Date, d2: Date) {
@@ -60,9 +68,9 @@ export const timeDataSlice = createSlice({
 });
 
 // Selectors
-const selectAllDays = (state: State) => state.days;
+const selectAllDays = (state: State): Days => state.days;
 
-const selectLastDays = (state: State, days: number = 0) => {
+const selectLastDays = (state: State, days = 0): LastDays => {
   const selected = takeRight(state.days, days);
   return {
     scores: selected.map((day: { score: number }) => day.score),
@@ -75,13 +83,17 @@ const selectLastDays = (state: State, days: number = 0) => {
   };
 };
 
-const selectLast7DaysScore = (state: State) => selectLastDays(state, 7);
+const selectLast7DaysScore = (state: State): LastDays =>
+  selectLastDays(state, 7);
 
-const selectLast14DaysScore = (state: State) => selectLastDays(state, 14);
+const selectLast14DaysScore = (state: State): LastDays =>
+  selectLastDays(state, 14);
 
-const selectLast30DaysScore = (state: State) => selectLastDays(state, 30);
+const selectLast30DaysScore = (state: State): LastDays =>
+  selectLastDays(state, 30);
 
-const selectLast90DaysScore = (state: State) => selectLastDays(state, 90);
+const selectLast90DaysScore = (state: State): LastDays =>
+  selectLastDays(state, 90);
 
 export const { setGlobalScore } = timeDataSlice.actions;
 

@@ -3,8 +3,9 @@ import Animated from 'react-native-reanimated';
 import TouchableScale from '@jonny/touchable-scale';
 import { styles } from './styles';
 import { View } from 'react-native';
+import { TabViewProps } from 'react-native-tab-view';
 
-export default function TabItem({
+const TabItem: React.FC = ({
   descriptors,
   route,
   index,
@@ -12,7 +13,7 @@ export default function TabItem({
   navigation,
   position,
   ...props
-}) {
+}: TabViewProps) => {
   const { options } = descriptors[route.key];
 
   const label =
@@ -36,17 +37,17 @@ export default function TabItem({
     }
   };
 
-  const inputRange = state.routes.map((_, i) => i);
+  const inputRange = state.routes.map((_, i: number) => i);
 
   const width = Animated.interpolate(position, {
     inputRange,
-    outputRange: inputRange.map((i) => (i === index ? 120 : 0)),
+    outputRange: inputRange.map((i: number) => (i === index ? 120 : 0)),
   });
 
   // TODO: when changing tabs js thread drops by 3 frames because of this interpolation
   const color = Animated.interpolateColors(position, {
     inputRange,
-    outputColorRange: inputRange.map((i) =>
+    outputColorRange: inputRange.map((i: number) =>
       i === index ? '#ffa726' : 'rgba(0, 0, 0, 0.4)'
     ),
   });
@@ -66,4 +67,6 @@ export default function TabItem({
       <Animated.View style={[styles.underline, { width }]} />
     </View>
   );
-}
+};
+
+export default TabItem;

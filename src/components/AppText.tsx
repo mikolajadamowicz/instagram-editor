@@ -1,7 +1,14 @@
 import React, { memo } from 'react';
 import { StyleSheet, Text, TextProps } from 'react-native';
 
-const AppText: React.FC<TextProps> = ({ children, style, bold, black, regular, ...props }) => {
+type Props = {
+  regular?: boolean;
+  black?: boolean;
+  bold?: boolean;
+  children: React.ReactNode;
+} & TextProps;
+
+const AppText = ({ children, style, bold, black, ...props }: Props) => {
   const textStyle = [style, styles.regular];
 
   if (bold) {
@@ -12,17 +19,21 @@ const AppText: React.FC<TextProps> = ({ children, style, bold, black, regular, .
     textStyle.push(styles.black);
   }
 
-  return <Text style={textStyle} {...props}>{children}</Text>;
-}; 
+  return (
+    <Text style={textStyle} {...props}>
+      {children}
+    </Text>
+  );
+};
 
 const styles = StyleSheet.create({
-  regular:{
+  regular: {
     fontFamily: 'HankRnd-Regular',
   },
-  bold:{
+  bold: {
     fontFamily: 'HankRnd-Bold ',
   },
-  black:{
+  black: {
     fontFamily: 'HankRnd-Black',
   },
 });

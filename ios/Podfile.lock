@@ -312,7 +312,7 @@ PODS:
     - React-cxxreact (= 0.62.2)
     - React-jsi (= 0.62.2)
     - ReactCommon/callinvoker (= 0.62.2)
-  - RNCAsyncStorage (1.10.3):
+  - RNCAsyncStorage (1.12.0):
     - React
   - RNCMaskedView (0.1.10):
     - React
@@ -324,6 +324,8 @@ PODS:
     - React
   - RNSVG (12.1.0):
     - React
+  - RNVectorIcons (8.0.0):
+    - React-Core
   - Yoga (1.14.0)
   - YogaKit (1.18.1):
     - Yoga (~> 1.14)
@@ -385,6 +387,7 @@ DEPENDENCIES:
   - RNReanimated (from `../node_modules/react-native-reanimated`)
   - RNScreens (from `../node_modules/react-native-screens`)
   - RNSVG (from `../node_modules/react-native-svg`)
+  - RNVectorIcons (from `../node_modules/react-native-vector-icons`)
   - Yoga (from `../node_modules/react-native/ReactCommon/yoga`)
 
 SPEC REPOS:
@@ -473,6 +476,8 @@ EXTERNAL SOURCES:
     :path: "../node_modules/react-native-screens"
   RNSVG:
     :path: "../node_modules/react-native-svg"
+  RNVectorIcons:
+    :path: "../node_modules/react-native-vector-icons"
   Yoga:
     :path: "../node_modules/react-native/ReactCommon/yoga"
 
@@ -518,15 +523,16 @@ SPEC CHECKSUMS:
   React-RCTText: fae545b10cfdb3d247c36c56f61a94cfd6dba41d
   React-RCTVibration: 4356114dbcba4ce66991096e51a66e61eda51256
   ReactCommon: ed4e11d27609d571e7eee8b65548efc191116eb3
-  RNCAsyncStorage: cd7234ff15c010723ed7c499ae4eedc605eac1fd
+  RNCAsyncStorage: 2a692bcb9b69b76a2f1a95f33db057129700af64
   RNCMaskedView: 5a8ec07677aa885546a0d98da336457e2bea557f
   RNGestureHandler: 9b7e605a741412e20e13c512738a31bd1611759b
   RNReanimated: e03f7425cb7a38dcf1b644d680d1bfc91c3337ad
   RNScreens: cf198f915f8a2bf163de94ca9f5bfc8d326c3706
   RNSVG: ce9d996113475209013317e48b05c21ee988d42e
+  RNVectorIcons: f67a1abce2ec73e62fe4606e8110e95a832bc859
   Yoga: 3ebccbdd559724312790e7742142d062476b698e
   YogaKit: f782866e155069a2cca2517aafea43200b01fd5a
 
 PODFILE CHECKSUM: cdeb6260325909c969f22d74fb94c2caf8bc66ce
 
-COCOAPODS: 1.10.0
+COCOAPODS: 1.10.1

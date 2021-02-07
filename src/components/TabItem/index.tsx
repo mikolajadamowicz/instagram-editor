@@ -3,7 +3,8 @@ import Animated from 'react-native-reanimated';
 import TouchableScale from '@jonny/touchable-scale';
 import { styles } from './styles';
 import { View } from 'react-native';
-import { Route, TabViewProps } from 'react-native-tab-view';
+import { TabViewProps } from 'react-native-tab-view';
+import { BUTTON_SCALE } from '../../constants';
 
 const TabItem: React.FC = ({
   descriptors,
@@ -55,7 +56,7 @@ const TabItem: React.FC = ({
   return (
     <View style={styles.root}>
       <TouchableScale
-        activeScale={0.8}
+        activeScale={BUTTON_SCALE}
         accessibilityRole="button"
         accessibilityState={isFocused ? { selected: true } : {}}
         accessibilityLabel={options.tabBarAccessibilityLabel}

@@ -1,7 +1,8 @@
 import React from 'react';
 import { LineChart } from 'react-native-chart-kit';
-import { Dimensions, StyleSheet, View } from 'react-native';
+import { StyleSheet } from 'react-native';
 import { scale } from 'react-native-size-matters';
+import useDimensions from '../hooks/useDimensions';
 
 type Props = {
   dataset: number[];
@@ -11,6 +12,7 @@ type Props = {
 
 const Chart: React.FC<Props> = React.forwardRef(
   ({ dataset, height = 330, labels, ...props }, ref) => {
+    const { width } = useDimensions();
     return (
       <LineChart
         ref={ref}
@@ -27,7 +29,7 @@ const Chart: React.FC<Props> = React.forwardRef(
         }}
         withInnerLines={false}
         withOuterLines={false}
-        width={Dimensions.get('window').width - scale(30)}
+        width={width - scale(30)}
         height={height}
         withDots={false}
         chartConfig={{

@@ -11,7 +11,7 @@ type Props = {
   setScore: (score: number) => void;
   score: number;
   setClicked: () => void;
-  lastScore: number;
+  lastScore: LastDays['scoreToday'];
 };
 
 const MainView: React.FC<Props> = ({

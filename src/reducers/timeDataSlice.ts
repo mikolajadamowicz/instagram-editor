@@ -11,7 +11,7 @@ type Day = {
 export type LastDays = {
   scores: number[];
   labels: string[];
-  scoreToday: number;
+  scoreToday: number | undefined;
 };
 
 type State = {
@@ -68,7 +68,7 @@ export const timeDataSlice = createSlice({
 });
 
 // Selectors
-const selectAllDays = (state: State): Days => state.days;
+const selectAllDays = (state: State): Day[] => state.days;
 
 const selectLastDays = (state: State, days = 0): LastDays => {
   const selected = takeRight(state.days, days);

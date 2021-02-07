@@ -3,7 +3,7 @@ import Animated from 'react-native-reanimated';
 import TouchableScale from '@jonny/touchable-scale';
 import { styles } from './styles';
 import { View } from 'react-native';
-import { TabViewProps } from 'react-native-tab-view';
+import { Route, TabViewProps } from 'react-native-tab-view';
 
 const TabItem: React.FC = ({
   descriptors,

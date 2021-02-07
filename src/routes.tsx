@@ -18,7 +18,7 @@ const SafeAreaMaterialTopTabBar = ({ ...props }) => {
 
 const Tab = createMaterialTopTabNavigator();
 
-export default () => {
+const Navigation: React.FC = () => {
   return (
     <SafeAreaProvider>
       <NavigationContainer>
@@ -34,3 +34,5 @@ export default () => {
     </SafeAreaProvider>
   );
 };
+
+export default Navigation;

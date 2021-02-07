@@ -11,15 +11,17 @@ import React from 'react';
 import { PersistGate } from 'redux-persist/integration/react';
 import { Provider } from 'react-redux';
 
-import MyTabs from './src/routes';
+import Navigation from './src/routes';
 import { store, persistor } from './src/store';
 
-export default function App() {
+const App: React.FC = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <MyTabs />
+        <Navigation />
       </PersistGate>
     </Provider>
   );
-}
+};
+
+export default App;

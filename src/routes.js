@@ -3,7 +3,7 @@ import { View, Dimensions } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createMaterialTopTabNavigator } from '@react-navigation/material-top-tabs';
 import StatisticsScreen from './screens/StatisticsScreen';
-import MainView from './screens/MainView';
+import MainScreen from './screens/MainScreen';
 import { SafeAreaProvider, useSafeArea } from 'react-native-safe-area-context';
 import AppTabBar from './components/AppTabBar';
 
@@ -28,7 +28,7 @@ export default () => {
           initialLayout={{ width: Dimensions.get('window').width }}
           swipeEnabled>
           <Tab.Screen name="Statistics" component={StatisticsScreen} />
-          <Tab.Screen name="Today" component={MainView} />
+          <Tab.Screen name="Today" component={MainScreen} />
         </Tab.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

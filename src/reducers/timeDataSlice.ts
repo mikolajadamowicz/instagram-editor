@@ -48,7 +48,7 @@ export const timeDataSlice = createSlice({
       const lastDay = state.days[state.days.length - 1];
       const updatedScore = lastDay.score + score;
 
-      //update this later, this expression is here only so that it won't break my own app
+      //TODO: update this later, this expression is here only so that it won't break my own app
       const updatedScoreToday = lastDay.scoreToday
         ? lastDay.scoreToday + score
         : score;

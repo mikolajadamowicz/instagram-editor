@@ -1,10 +1,10 @@
 import React from 'react';
-import Chart from '../components/LineChart';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 import AppText from './AppText';
 import Animated from 'react-native-reanimated';
 import ChartNotReady from './ChartNotReady';
 import { CHART_HEIGHT } from '../constants';
+import Chart from './LineChart';
 
 type Props = {
   dataset: number[];

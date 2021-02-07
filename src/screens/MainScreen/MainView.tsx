@@ -1,8 +1,8 @@
 import React from 'react';
 import { View, Button, ScrollView } from 'react-native';
 import { SafeAreaView } from 'react-native-safe-area-context';
-import Chart from '../../components/LineChart';
-import AppText from '../../components/AppText';
+import Chart from '@components/LineChart';
+import AppText from '@components/AppText';
 import { LastDays } from '../../reducers/timeDataSlice';
 import styles from './styles';
 

@@ -2,7 +2,7 @@ import React, { FC, useMemo } from 'react';
 import { View, ViewStyle } from 'react-native';
 import Animated from 'react-native-reanimated';
 import { EdgeInsets } from 'react-native-safe-area-context';
-import TitleChart from '../../components/TitleChart';
+import TitleChart from '@components/TitleChart';
 import { LastDays } from '../../reducers/timeDataSlice';
 import styles from './styles';
 

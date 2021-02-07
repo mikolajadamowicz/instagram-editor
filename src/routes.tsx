@@ -5,8 +5,8 @@ import { createMaterialTopTabNavigator } from '@react-navigation/material-top-ta
 import StatisticsScreen from './screens/StatisticsScreen';
 import MainScreen from './screens/MainScreen';
 import { SafeAreaProvider, useSafeArea } from 'react-native-safe-area-context';
-import AppTabBar from './components/AppTabBar';
 import useDimensions from './hooks/useDimensions';
+import AppTabBar from './components/AppTabBar';
 
 const SafeAreaMaterialTopTabBar = ({ ...props }) => {
   const insets = useSafeArea();

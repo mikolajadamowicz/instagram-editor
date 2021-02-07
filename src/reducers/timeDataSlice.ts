@@ -2,20 +2,20 @@ import { createSlice } from '@reduxjs/toolkit';
 import { takeRight, last } from 'lodash';
 import moment from 'moment';
 
-type Days = {
+type Day = {
   date: string;
   score: number;
   scoreToday: number;
 };
 
-type LastDays = {
+export type LastDays = {
   scores: number[];
   labels: string[];
   scoreToday: number;
 };
 
 type State = {
-  days: Days;
+  days: Day[];
 };
 
 function sameDay(d1: Date, d2: Date) {

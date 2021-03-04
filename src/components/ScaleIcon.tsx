@@ -11,7 +11,7 @@ type Props = {
 
 const ScaleIcon: React.FC<Props> = ({
   size = 30,
-  color = COLORS.text,
+  color = COLORS.text.primary,
   name,
   ...props
 }) => {

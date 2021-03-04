@@ -30,7 +30,7 @@ const AppText = ({ children, style, bold, black, ...props }: Props) => {
 const styles = StyleSheet.create({
   regular: {
     fontFamily: 'HankRnd-Regular',
-    color: COLORS.text,
+    color: COLORS.text.primary,
   },
   bold: {
     fontFamily: 'HankRnd-Bold ',

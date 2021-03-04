@@ -34,5 +34,5 @@ const styles = StyleSheet.create({
     height: 330,
     width: APP_WIDTH - scale(30),
   },
-  text: { color: COLORS.text, fontSize: 20 },
+  text: { color: COLORS.text.primary, fontSize: 20 },
 });

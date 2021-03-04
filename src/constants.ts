@@ -13,9 +13,11 @@ const COLORS = {
   primary3: '#e26a00',
   secondary: '#141414',
   background: '#000000',
-  text: '#FFFFFF',
-  text2: '#444444',
-  text2light: '#808080',
+  text: {
+    primary: '#FFFFFF',
+    secondary: '#444444',
+    light: '#808080',
+  },
   shadow: '#000000',
 };
 

@@ -49,7 +49,7 @@ const TabItem: React.FC = ({
   const color = Animated.interpolateColors(position, {
     inputRange,
     outputColorRange: inputRange.map((i: number) =>
-      i === index ? COLORS.primary : COLORS.text
+      i === index ? COLORS.primary : COLORS.text.primary
     ),
   });
 

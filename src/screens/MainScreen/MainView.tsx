@@ -5,6 +5,7 @@ import AppText from '../../components/AppText';
 import { LastDays } from '../../reducers/timeDataSlice';
 import styles from './styles';
 import ScaleIcon from '../../components/ScaleIcon';
+import Headline from '../../components/Headline';
 
 type Props = {
   timeData: LastDays;
@@ -22,7 +23,7 @@ const MainView: React.FC<Props> = ({
   lastScore,
 }) => (
   <ScrollView style={styles.root} contentContainerStyle={styles.scrollView}>
-    <AppText>Last 7 days</AppText>
+    <Headline style={styles.header}>Last 7 days</Headline>
     <Chart dataset={timeData.scores} labels={timeData.labels} />
     <AppText
       style={styles.desc}>{`Your overall score is ${lastScore}`}</AppText>

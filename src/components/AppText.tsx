@@ -6,10 +6,11 @@ type Props = {
   regular?: boolean;
   black?: boolean;
   bold?: boolean;
+  header?: boolean;
   children: React.ReactNode;
 } & TextProps;
 
-const AppText = ({ children, style, bold, black, ...props }: Props) => {
+const AppText = ({ children, style, bold, black, header, ...props }: Props) => {
   const textStyle = [style, styles.regular];
 
   if (bold) {
@@ -18,6 +19,10 @@ const AppText = ({ children, style, bold, black, ...props }: Props) => {
 
   if (black) {
     textStyle.push(styles.black);
+  }
+
+  if (header) {
+    textStyle.push(styles.header);
   }
 
   return (
@@ -37,6 +42,9 @@ const styles = StyleSheet.create({
   },
   black: {
     fontFamily: 'HankRnd-Black',
+  },
+  header: {
+    fontSize: 24,
   },
 });
 

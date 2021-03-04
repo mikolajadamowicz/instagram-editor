@@ -5,7 +5,7 @@ const BUTTON_SCALE = 0.8;
 const CHART_HEIGHT = verticalScale(290);
 const APP_WIDTH = Dimensions.get('window').width;
 const APP_HEIGHT = Dimensions.get('window').height;
-const TAB_HEIGHT = 50;
+const TAB_HEIGHT = verticalScale(50);
 
 const COLORS = {
   primary: '#ffa726',

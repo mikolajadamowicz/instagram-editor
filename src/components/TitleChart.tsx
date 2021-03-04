@@ -1,10 +1,10 @@
 import React from 'react';
 import Chart from '../components/LineChart';
 import { StyleSheet, View, ViewStyle } from 'react-native';
-import AppText from './AppText';
 import Animated from 'react-native-reanimated';
 import ChartNotReady from './ChartNotReady';
 import { CHART_HEIGHT } from '../constants';
+import Headline from './Headline';
 
 type Props = {
   dataset: number[];
@@ -26,7 +26,7 @@ const TitleChart: React.FC<Props> = ({
 
   return (
     <Container style={viewStyle} {...props}>
-      <AppText>{title}</AppText>
+      <Headline style={styles.header}>{title}</Headline>
       {dataset.length > 30 ? (
         <ChartNotReady style={styles.notReady} />
       ) : (
@@ -47,6 +47,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   notReady: { height: CHART_HEIGHT },
+  header: {
+    margin: '2%',
+  },
 });
 
 export default TitleChart;

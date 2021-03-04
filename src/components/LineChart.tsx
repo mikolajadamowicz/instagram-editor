@@ -30,7 +30,7 @@ const Chart: React.FC<Props> = React.forwardRef(
         }}
         withInnerLines={false}
         withOuterLines={false}
-        width={width - scale(30)}
+        width={width - scale(45)}
         height={height}
         withDots={false}
         chartConfig={{

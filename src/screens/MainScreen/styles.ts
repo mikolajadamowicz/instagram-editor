@@ -19,6 +19,9 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     margin: '2%',
   },
+  header: {
+    margin: '5%',
+  },
 });
 
 export default styles;

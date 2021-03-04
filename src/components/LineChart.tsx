@@ -3,6 +3,7 @@ import { LineChart } from 'react-native-chart-kit';
 import { StyleSheet } from 'react-native';
 import { scale } from 'react-native-size-matters';
 import useDimensions from '../hooks/useDimensions';
+import { COLORS } from '../constants';
 
 type Props = {
   dataset: number[];
@@ -33,9 +34,9 @@ const Chart: React.FC<Props> = React.forwardRef(
         height={height}
         withDots={false}
         chartConfig={{
-          backgroundColor: '#e26a00',
-          backgroundGradientFrom: '#fb8c00',
-          backgroundGradientTo: '#ffa726',
+          backgroundColor: COLORS.primary3,
+          backgroundGradientFrom: COLORS.primary2,
+          backgroundGradientTo: COLORS.primary,
           decimalPlaces: 2, // optional, defaults to 2dp
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
@@ -45,7 +46,7 @@ const Chart: React.FC<Props> = React.forwardRef(
           propsForDots: {
             r: '6',
             strokeWidth: '2',
-            stroke: '#ffa726',
+            stroke: COLORS.primary,
           },
         }}
         bezier
@@ -63,4 +64,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default Chart;
+export default React.memo(Chart);

@@ -4,7 +4,7 @@ import TouchableScale from '@jonny/touchable-scale';
 import { styles } from './styles';
 import { View } from 'react-native';
 import { TabViewProps } from 'react-native-tab-view';
-import { BUTTON_SCALE } from '../../constants';
+import { BUTTON_SCALE, COLORS } from '../../constants';
 
 const TabItem: React.FC = ({
   descriptors,
@@ -49,7 +49,7 @@ const TabItem: React.FC = ({
   const color = Animated.interpolateColors(position, {
     inputRange,
     outputColorRange: inputRange.map((i: number) =>
-      i === index ? '#ffa726' : 'rgba(0, 0, 0, 0.4)'
+      i === index ? COLORS.primary : COLORS.text
     ),
   });
 

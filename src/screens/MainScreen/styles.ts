@@ -15,9 +15,6 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
     fontSize: 24,
   },
-  backdrop: {
-    backgroundColor: '#fff',
-  },
   desc: {
     alignSelf: 'center',
     margin: '2%',

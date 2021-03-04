@@ -1,5 +1,6 @@
 import React, { memo } from 'react';
 import { StyleSheet, Text, TextProps } from 'react-native';
+import { COLORS } from '../constants';
 
 type Props = {
   regular?: boolean;
@@ -29,6 +30,7 @@ const AppText = ({ children, style, bold, black, ...props }: Props) => {
 const styles = StyleSheet.create({
   regular: {
     fontFamily: 'HankRnd-Regular',
+    color: COLORS.text,
   },
   bold: {
     fontFamily: 'HankRnd-Bold ',

@@ -31,16 +31,8 @@ const MainView: React.FC<Props> = ({
     </AppText>
     <AppText style={styles.score}>{score}</AppText>
     <View style={styles.buttons}>
-      <ScaleIcon
-        onPress={() => setScore(score - 1)}
-        color="#111111"
-        name="minus"
-      />
-      <ScaleIcon
-        onPress={() => setScore(score + 1)}
-        color="#111111"
-        name="plus"
-      />
+      <ScaleIcon onPress={() => setScore(score - 1)} name="minus" />
+      <ScaleIcon onPress={() => setScore(score + 1)} name="plus" />
     </View>
     <Button onPress={setClicked} title="Set" />
   </ScrollView>

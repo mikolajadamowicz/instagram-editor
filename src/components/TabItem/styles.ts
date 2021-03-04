@@ -1,17 +1,18 @@
 import { StyleSheet } from 'react-native';
+import { COLORS, TAB_HEIGHT } from '../../constants';
 
 const styles = StyleSheet.create({
   root: {
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    height: 50,
+    height: TAB_HEIGHT,
   },
   text: {
     margin: 10,
   },
   underline: {
-    backgroundColor: 'orange',
+    backgroundColor: COLORS.primary,
     height: '5%',
     borderRadius: 10,
   },

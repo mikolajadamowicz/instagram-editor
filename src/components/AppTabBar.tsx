@@ -17,7 +17,7 @@ const AppTabBar: React.FC = (props: Props) => {
 };
 
 const styles = StyleSheet.create({
-  root: { flexDirection: 'row', marginBottom: 10 },
+  root: { flexDirection: 'row' },
 });
 
 export default AppTabBar;

@@ -1,7 +1,7 @@
 import React, { useMemo } from 'react';
 import { StyleSheet, View, ViewProps } from 'react-native';
 import { scale } from 'react-native-size-matters';
-import { APP_WIDTH } from '../constants';
+import { APP_WIDTH, COLORS } from '../constants';
 import AppText from './AppText';
 
 const ChartNotReady: React.FC<ViewProps> = ({ style, ...props }) => {
@@ -20,8 +20,8 @@ const styles = StyleSheet.create({
   root: {
     alignItems: 'center',
     justifyContent: 'center',
-    backgroundColor: '#000000',
-    shadowColor: '#000',
+    backgroundColor: COLORS.background,
+    shadowColor: COLORS.shadow,
     shadowOffset: {
       width: 0,
       height: 3,
@@ -34,5 +34,5 @@ const styles = StyleSheet.create({
     height: 330,
     width: APP_WIDTH - scale(30),
   },
-  text: { color: '#FFFFFF', fontSize: 20 },
+  text: { color: COLORS.text, fontSize: 20 },
 });

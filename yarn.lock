@@ -5781,6 +5781,10 @@ react-native-chart-kit@^5.5.0:
     paths-js "^0.4.10"
     point-in-polygon "^1.0.1"
 
+"react-native-fade-in-out@https://github.com/mikolajadamowicz/react-native-fade-in-out":
+  version "0.1.0"
+  resolved "https://github.com/mikolajadamowicz/react-native-fade-in-out#63f878ba0ce6df71734773170e91e42c738298c6"
+
 react-native-gesture-handler@^1.9.0:
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/react-native-gesture-handler/-/react-native-gesture-handler-1.9.0.tgz#e441b1c0277c3fd4ca3e5c58fdd681e2f0ceddf0"

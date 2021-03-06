@@ -5,6 +5,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   scrollView: { alignItems: 'center' },
+  center: { alignItems: 'center' },
   buttons: {
     flexDirection: 'row',
     justifyContent: 'space-around',

@@ -12,9 +12,10 @@ import Animated, {
   abs,
 } from 'react-native-reanimated';
 import { ViewStyle } from 'react-native';
+import { CHART_HEIGHT } from '../constants';
 
-const CHART_HEIGHT = verticalScale(330);
-const OPACITY = CHART_HEIGHT - 100;
+const HEIGHT = CHART_HEIGHT + 40;
+const OPACITY = HEIGHT - 50;
 
 const useCardFlipOnScroll = (): [
   (...args: any[]) => void,
@@ -27,14 +28,14 @@ const useCardFlipOnScroll = (): [
   });
   const rotateX = concat(
     interpolate(scrollY, {
-      inputRange: [0, CHART_HEIGHT],
-      outputRange: [0, -90],
+      inputRange: [0, HEIGHT],
+      outputRange: [0, -140],
       extrapolate: Extrapolate.CLAMP,
     }),
     'deg'
   );
 
-  const x = multiply(-CHART_HEIGHT / 2, sin(toRad(abs(rotateX))));
+  const x = multiply(-HEIGHT / 2, sin(toRad(abs(rotateX))));
 
   const animatedViewStyle = useMemo(
     () => [

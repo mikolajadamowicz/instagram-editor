@@ -31,7 +31,7 @@ const Statistics: FC<Props> = ({
   return (
     <Animated.ScrollView
       showsVerticalScrollIndicator={false}
-      scrollEventThrottle={1}
+      scrollEventThrottle={16}
       onScroll={onScrollEvent}
       style={styles.scroll}>
       <View style={containerStyle}>

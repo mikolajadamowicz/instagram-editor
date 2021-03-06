@@ -37,7 +37,7 @@ const Chart: React.FC<Props> = React.forwardRef(
           backgroundColor: COLORS.primary3,
           backgroundGradientFrom: COLORS.primary2,
           backgroundGradientTo: COLORS.primary,
-          decimalPlaces: 2, // optional, defaults to 2dp
+          decimalPlaces: 0, // optional, defaults to 2dp
           color: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           labelColor: (opacity = 1) => `rgba(255, 255, 255, ${opacity})`,
           style: {
